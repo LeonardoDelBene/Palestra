@@ -5,9 +5,9 @@ public class GestoreLogin {
         this.listaCredenziali = listaCredenziali;
     }
 
-    public Integer login(Credenziali c){
-        if(listaCredenziali.chechkCredenziali(c)==true){
-            int cliente=listaCredenziali.getCliente(c);
+    public Integer login(String username, String password){
+        if(listaCredenziali.chechkCredenziali(username, password)==true){
+            int cliente=listaCredenziali.getCliente(username, password);
             System.out.println("credenziali giuste"+" "+cliente);
             return cliente;
         }
@@ -15,7 +15,7 @@ public class GestoreLogin {
         return null;
     }
 
-    public void registra(Credenziali c){
-        listaCredenziali.addCredenziali(c);
+    public void registra(String username, String password, int cliente){
+        listaCredenziali.addCredenziali(username, password, cliente);
     }
 }
